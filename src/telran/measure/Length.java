@@ -11,25 +11,35 @@ public class Length implements Comparable<Length> {
 
 	@Override
 	public int compareTo(Length o) {
-		return (int) (getAmount() - o.getAmount());
+		return Float.compare(getAmount(), o.getAmount());
 	}
 
 	public float getAmount() {
 		return unit.value * amount;
 	}
-//public boolean equals(object Object) {
-//	
-//}
+
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Length)) {
+			return false;
+		}
+
+		Length other = (Length) obj;
+		Length convertedOther = other.convert(getUnit()); // Convert the other Length to this unit
+		return this.getAmount() == convertedOther.getAmount();
+	}
 
 	public Length convert(LengthUnit unit) {
-		float amountMM = getAmount(); 
+		float amountMM = getAmount();
 		float amountOfUnits = amountMM / unit.value;
 		Length newElement = new Length(amountOfUnits, unit);
 		return newElement;
 	}
 
 	public LengthUnit getUnit() {
-		
+
 		return unit;
 	}
 }

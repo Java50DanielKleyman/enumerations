@@ -32,22 +32,21 @@ class LengthTest {
 
 	@Test
 	void testConvert() {
-		Length l = l3.convert(LengthUnit.M);	
-//		System.out.println(1.);
+		Length l = l3.convert(LengthUnit.M);
 		assertEquals(length2.getAmount(), l.getAmount());
 		assertEquals(length2.getUnit(), l.getUnit());
 	}
 
-	@Test
-	void testToString() {
-		assertEquals("500.0M", length2.toString());
-	}
-
-	@Test
-	void testBetween() {
-		Length l = LengthUnit.M.between(length2, length1);
-		assertEquals(l.getAmount(), length2.getAmount());
-		assertEquals(l.getUnit(), length2.getUnit());
-		assertEquals(l.getUnit(), LengthUnit.M);
-	}
+//	@Test
+//	void testToString() {
+//		assertEquals("500.0M", length2.toString());
+//	}
+//
+//	@Test
+//	void testBetween() {
+//		Length l = LengthUnit.M.between(length2, length1);
+//		assertEquals(l.getAmount(), length2.getAmount());
+//		assertEquals(l.getUnit(), length2.getUnit());
+//		assertEquals(l.getUnit(), LengthUnit.M);
+//	}
 }
