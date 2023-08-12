@@ -37,10 +37,10 @@ class LengthTest {
 		assertEquals(length2.getUnit(), l.getUnit());
 	}
 
-//	@Test
-//	void testToString() {
-//		assertEquals("500.0M", length2.toString());
-//	}
+	@Test
+	void testToString() {
+		assertEquals("500.0M", length2.toString());
+	}
 //
 //	@Test
 //	void testBetween() {

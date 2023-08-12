@@ -25,9 +25,7 @@ public class Length implements Comparable<Length> {
 		if (!(obj instanceof Length)) {
 			return false;
 		}
-
-		Length other = (Length) obj;
-		Length convertedOther = other.convert(getUnit()); // Convert the other Length to this unit
+		Length convertedOther = ((Length) obj).convert(getUnit());
 		return this.getAmount() == convertedOther.getAmount();
 	}
 
@@ -41,5 +39,10 @@ public class Length implements Comparable<Length> {
 	public LengthUnit getUnit() {
 
 		return unit;
+	}
+
+	public String toString() {
+		String amountStr = String.format("%.1f", amount);
+		return amountStr + unit.name();
 	}
 }
