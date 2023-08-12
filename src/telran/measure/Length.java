@@ -15,7 +15,7 @@ public class Length implements Comparable<Length> {
 	}
 
 	public float getAmount() {
-		return unit.value * amount;
+		return amount;
 	}
 
 	public boolean equals(Object obj) {

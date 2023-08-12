@@ -41,12 +41,13 @@ class LengthTest {
 	void testToString() {
 		assertEquals("500.0M", length2.toString());
 	}
-//
-//	@Test
-//	void testBetween() {
-//		Length l = LengthUnit.M.between(length2, length1);
-//		assertEquals(l.getAmount(), length2.getAmount());
+
+	@Test
+	void testBetween() {
+		Length l = LengthUnit.M.between(length2, length1);		
+		System.out.println(l.getAmount());
+		assertEquals(l.getAmount(), length2.getAmount());
 //		assertEquals(l.getUnit(), length2.getUnit());
 //		assertEquals(l.getUnit(), LengthUnit.M);
-//	}
+	}
 }

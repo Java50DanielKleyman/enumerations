@@ -12,7 +12,12 @@ public enum LengthUnit {
 	float getValue() {
 		return value;
 	}
-	public Length between(Length length1, Length length2) {
-		return length2.getAmount() - length1.getAmount();
+
+	public Length between(Length length2, Length length1) {
+		Length converted1 = length1.convert(this);
+		Length converted2 = length2.convert(this);
+		float between = Math.abs(converted2.getAmount() - converted1.getAmount());
+		Length newLength = new Length(between, this);
+		return newLength;
 	}
 }
