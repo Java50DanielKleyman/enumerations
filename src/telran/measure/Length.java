@@ -32,8 +32,7 @@ public class Length implements Comparable<Length> {
 	public Length convert(LengthUnit unit) {
 		float amountMM = getAmount() * getUnit().value;
 		float amountOfUnits = amountMM / unit.value;
-		Length newElement = new Length(amountOfUnits, unit);
-		return newElement;
+		return new Length(amountOfUnits, unit);
 	}
 
 	public LengthUnit getUnit() {
